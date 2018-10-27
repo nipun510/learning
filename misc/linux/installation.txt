@@ -1,0 +1,56 @@
+repository list => /etc/apt/sources.list
+sudo add-apt-repository ppa:webupd8team/java
+
+dpkg
+              -l, --list package-name-pattern...
+                  List packages matching given pattern. Not installed packages are also listed
+                  File-globbing like pattern.
+                  eg: dpkg -l *java8*
+
+              -s, --status package-name...
+                  Report status of specified package.
+              -L, --listfiles package-name...
+                  List files installed to your system from package-name.
+              -S, --search filename-search-pattern...
+                  Search for a filename from installed packages.
+              -p, --print-avail package-name...
+                  Display details about package-name, as found in
+                  /var/lib/dpkg/available. Users of APT-based frontends
+                  should use apt-cache show package-name instead.
+
+            --install <package_name>
+            --remove <package_name>
+            --purge <package_name>
+
+apt
+              list package-name-pattern
+                  --installed
+                  --upgradable
+                  --all-versions
+                    eg apt list *java8* # all packages containing java8 in
+                                          their name
+                       apt list --installed *java8*
+
+
+              search term
+                    eg apt search oracle
+                              searches packages for the given term  and returns
+                              all "RELATED" packages
+             show <package_name> 
+
+#Difference between update and upgrade
+
+apt-cache 
+              search pkg
+              show pkg
+              showpkg pkg #To check dependencies of specific package
+    
+
+
+apt-get 
+             source pkg           #download and unpack source code of a package to a specific directory
+             --compile source pkg #download, unpack and compile the source code
+             download pkg         #download package in current directory
+             check                #update package cache and checks for broken dependencies.
+             install packageName --only-upgrade #only upgrade and doesn't install any package
+
