@@ -19,7 +19,7 @@ int main()
 // operator()() for the generated function object (§11.4.1) is a const member
 // function.
 
-	auto fun2 = [&c](int a, int b) mutable
+	auto fun2 = [c](int a, int b) mutable
 	{
 		c = 20;
 		return a + b + c;
@@ -36,7 +36,7 @@ int main()
 	std::vector<double> data{12.3, 23.4, 232.2};
 	auto func =
 		std::bind( // C++11 emulation
-			[](std::vector<double>& data) mutable // of init capture
+			[](std::vector<double>&& data) mutable // of init capture
 					{ /* uses of data */ }, // for mutable lambda
 			std::move(data)
 );

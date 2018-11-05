@@ -41,6 +41,7 @@ void fun()
 int main()
 {
 	base b{}; // calls default
+	base b({}); // calls initializer list
 	base b1{12,23}; // calls intializer list , constructor with 2 args not called
 	//fun({});
 	base b2{1}; // calls intializer list
