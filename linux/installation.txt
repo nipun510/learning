@@ -54,3 +54,16 @@ apt-get
              check                #update package cache and checks for broken dependencies.
              install packageName --only-upgrade #only upgrade and doesn't install any package
 
+
+
+### Displaying, Setting, and choosing alternatives of a package: ###
+    ----------------------------------------------------------
+
+update-alternatives --query g++
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 40
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 100
+
+sudo update-alternatives --config g++
+
+
