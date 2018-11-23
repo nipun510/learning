@@ -1,0 +1,97 @@
+#free 	
+	command shows free, total and swap memory information in bytes.
+
+#df
+	report file system disk space usage
+
+#lscpu 
+	display information on CPU architecture
+
+#lsblk 
+	list block devices.
+
+#du     estimate file space usage
+	-s, --summarize
+
+#uname 
+	uname -a
+	Linux mymachine 2.6.18-194.e15PAE #1 SMP Fri Apr 2 15:37:44 EDT 2010 i686 i686 i386 GNU/Linux	
+	    "Linux": The machine's kernel name (e.g, OS).
+	    "mymachine": The machine's node name (e.g, hostname).
+	    "2.6.18-194.e15PAE": The kernel version
+	    "#1 SMP Fri Apr 2 15:37:44 EDT 2010": The kernel version and build time.
+	    "i686 i686": The processor type and hardware platform.
+	    "i386": The architecture of the processor. (This and the two above basically all mean the same thing on most systems. 
+		    They typically only differ on certain embedded platforms.)
+	    "GNU/Linux": The operating system name.
+
+
+#service
+	Service command call script located at /etc/init.d/ directory and execute the script. 
+	There are two ways to start the any service. For example we start the service called httpd with service command.
+	service httpd start
+	/etc/init.d/httpd start
+
+#uptime
+	In Linux uptime command shows since how long your system is running and the number of users are currently logged in 
+	and also displays load average for 1,5 and 15 minutes intervals
+	uptime
+	 13:47:41 up 1 day, 18:12,  3 users,  load average: 3.31, 3.17, 3.305
+
+#users 
+	Users command displays currently logged in users.	
+
+#top
+	display Linux processes
+	top -n 1 -b > top-output.txt
+	n => no of iterations or refresh
+	b => batch mode
+	interactive mode:
+	k => to kill a process
+	c => shows absolute path of process
+	By default, top displays %CPU as a percentage of a single CPU. 
+	shif + i => to show overall percentage.
+	
+#ps
+	report a snapshot of the current processes.
+	
+	output:
+	    USER = user owning the process
+	    PID = process ID of the process
+	    PPID = ID number of the process's parent process
+	    %CPU = It is the CPU time used divided by the time the process has been running.
+	    %MEM = ratio of the process’s resident set size to the physical memory on the machine
+	    VSZ = virtual memory usage of entire process (in KiB)
+	    RSS = resident set size, the non-swapped physical memory that a task has used (in KiB)
+	    TTY = controlling tty (terminal)
+	    STAT = multi-character process state
+	    START = starting time or date of the process
+	    TIME = cumulative CPU time
+	    COMMAND = command with all its arguments
+	    ADDR    =  Memory address of the process
+	    C or CP =  CPU usage and scheduling information
+	    NI      =  nice value
+	    F       =  Flags
+	    PRI     =  Priority of the process
+	    RSS     =  Real memory usage
+	    SZ      =  Virtual memory usage
+	    WCHAN   =  Memory address of the event the process is waiting for
+	
+	    R running or runnable (on run queue)
+	    D uninterruptible sleep (usually IO)
+	    S interruptible sleep (waiting for an event to complete)
+	    Z defunct/zombie, terminated but not reaped by its parent
+	    T stopped, either by a job control signal or because it is being traced
+
+
+####################  creating bootable usb ################################################
+
+1: Check the pen drive device name.
+	lsblk
+
+2: Unmount and Format the pendrive.
+	sudo umount /dev/sdc1
+	sudo mkfs.vfat -n 'Ubuntu' -I /dev/sdc1
+
+3:Burn it bootable using th iso file.
+	sudo dd bs=4M if=/home/bbnladmin/Desktop/ISO /ubuntu-12.04.iso of=/dev/sdb1 && sync
