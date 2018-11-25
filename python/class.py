@@ -30,7 +30,7 @@ if __name__ == '__main__':
 	b = B()
 	print(list(b.__dict__.keys())) #prints just  attribues attached to namespace object
 	print(list(B.__dict__.keys()))
-	print(dir(b)) # print instance as well as all the inherited attributes
+	print(dir(b))                  # prints instance as well as all the inherited attributes
 	
 	print(b.__class__)
 	print(B.__name__)

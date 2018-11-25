@@ -15,9 +15,10 @@ class decorator:
 
 
 
+
 class base:
 	@decorator
-	def method1(self):
+	def method1(self): 
 		print("method1")
 
 	@method1.setter

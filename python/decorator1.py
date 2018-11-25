@@ -24,6 +24,7 @@ class base:
 
 	def fun1():
 		print("fun1 called")
+		
 	@decorator          #fun2 = decorator(fun2)
 	def fun2(self):
 		print("fun2 called")

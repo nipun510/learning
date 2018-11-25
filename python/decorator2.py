@@ -12,7 +12,9 @@ def decorator(arg1, arg2):
 
 print("Before decorator")
 
-@decorator(12,23)
+
+#fun = wrapper(fun)
+@decorator(12,23) 
 def fun():
 	print("fun")
 
