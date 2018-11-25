@@ -18,7 +18,7 @@ class Squares2:
 		self.start = start # Multiscans: extra object
 		self.stop = stop
 		def __iter__(self):
-		return SquaresIter(self.start, self.stop)
+			return SquaresIter(self.start, self.stop)
 
 class SquaresIter:
 	def __init__(self, start, stop):
@@ -26,13 +26,11 @@ class SquaresIter:
 		self.stop = stop
 	def __next__(self):
 		if self.value == self.stop:
-		raise StopIteration
+			raise StopIteration
 		self.value += 1
 		return self.value ** 2
 
-def fun():
-	for x in range(0,4):
-		yield x
+
 
 if __name__ == '__main__':
 	# __iter__/yield combination has an important added bonus—it also supports
@@ -43,4 +41,9 @@ if __name__ == '__main__':
 
 	for val in s:
 		print(val)
+    
+	print("yield")
+	for val in fun():
+		print(val)
 
+	print(type(fun()))
