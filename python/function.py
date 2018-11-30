@@ -18,6 +18,9 @@ if __name__ == '__main__':
 	a = A()
 	a.fun()
 	fun2 = a.fun#Bound methods
-	fun3 = A.fun(a)#Unbound methods
+	A.fun(a)
+	print(type(a.fun))
+	print(type(A.selfless))
 	fun2()
-	A.unboundfun2(23,23) # Doesn't take self
+
+	#A.unboundfun2(23,23) # Doesn't take self

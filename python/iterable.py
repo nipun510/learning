@@ -51,4 +51,10 @@ if __name__ == '__main__':
 		print(val)
 	print("Next iteration of val")
 	for val in v:
-		print(val)
+		print(val, end=' ')
+	print('\n')
+
+	s2 = Squares(1,5);
+	print(list(iter(s2)))
+
+

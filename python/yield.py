@@ -22,6 +22,7 @@ def generator():
     yield t 
   
 call = generator() 
+print(type(call))
 next(call) 
 next(call) 
 next(call) 
