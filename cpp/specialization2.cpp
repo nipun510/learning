@@ -3,16 +3,14 @@
 
 template <typename T>
 struct A{};
-
 template<typename T, typename U> // partial specialization
 struct A<std::pair<T,U>>{};
 
+
 template< typename T1, typename... U>
 struct B{};
-
 template <typename T1> // atleast 1 argument required in specialiazation
 struct B<T1>{ using type = int;};
-
 template <typename T1, typename T2>
 struct B<T1, T2>{};
 

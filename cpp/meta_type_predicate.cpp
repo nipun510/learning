@@ -3,17 +3,19 @@
 
 namespace istd
 {
-template<typename T>
-struct Is_integral
-{
-	static const bool value = false;
-};
-template<>
-struct Is_integral<int>
-{
-	static const bool value = true;
-};
+	template<typename T>
+	struct Is_integral
+	{
+		static const bool value = false;
+	};
+
+	template<>
+	struct Is_integral<int>
+	{
+		static const bool value = true;
+	};
 }
+
 template<typename T>
 void fun(T val)
 {
