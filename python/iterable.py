@@ -73,6 +73,8 @@ if __name__ == '__main__':
 	print(list(iter(s2)))
 
 	#Allows multiple active iterator
-	for i in Integer():
-		for j in Integer():
+	integer = Integer()
+	for i in integer:
+		for j in integer:
 			print(i,j)
+
