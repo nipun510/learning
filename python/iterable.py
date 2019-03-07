@@ -29,6 +29,21 @@ class Value:
 		val = self.data[self.x]
 		self.x += 1
 		return val
+class Iterator:
+	def __init__(self):
+		self.data = 0
+
+	def __next__(self):
+		if(self.data < 10):
+			self.data += 1
+			return self.data
+		else:
+			raise StopIteration
+
+class Integer:
+	def __iter__(self):
+		return Iterator()
+
 #Today, all iteration contexts in Python will try the __iter__ method first,
 #before trying __getitem__.
 if __name__ == '__main__':
@@ -57,4 +72,7 @@ if __name__ == '__main__':
 	s2 = Squares(1,5);
 	print(list(iter(s2)))
 
-
+	#Allows multiple active iterator
+	for i in Integer():
+		for j in Integer():
+			print(i,j)
