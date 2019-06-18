@@ -45,6 +45,26 @@ class B  {
 class C:public A, public B{
 };//size= 8 + 16 = 24 bytes
 
+
+
+
+
+class A1{
+      public:
+            virtual void fun(){}
+};
+
+class B1 : virtual public A1{
+};
+
+class C1 : virtual public A1{
+};
+
+class D1: public B1, public C1{
+};
+
+
+
 int main(){
   A a;
   B b;
@@ -53,6 +73,14 @@ int main(){
   int * ptr = & val;
   std::cout << sizeof(int) << " " << sizeof(ptr) << "\n";
   std::cout << sizeof(a) << " " << sizeof(b) << " " << sizeof(c) << "\n";
+
+
+  A1 a1;
+  B1 b1;
+  C1 c1;
+  D1 d1;
+  std::cout << sizeof(a1) << " " << sizeof(b1) << "  " << sizeof(c1) << " " << sizeof(d1) << "\n";
+  // 8 8  8 16
 }
 /*
 4 8
