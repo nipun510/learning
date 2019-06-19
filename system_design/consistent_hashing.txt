@@ -1,0 +1,17 @@
+https://towardsdatascience.com/consistent-hashing-simplified-7fe4e512324
+Consistent hashing is a special kind of hashing such that when a hash table is
+resized and consistent hashing is used,
+only K/n keys need to be remapped on average, where K is the number of keys,
+and n is the number of slots.
+  Solves following problems:
+  -Redistribution of all keys every time we scale up or down[horizontal
+scalability].
+    creating the hash key space
+    Representing the hash key space as a Ring.
+    Placing servers on the hash ring.
+    Determining placements of keys on Servers
+    Adding a server to the Ring.
+    Removing a server from the Ring.
+    
+  -Non uniform distribution of data across servers[data hotspots].
+    To assign not one but many labels to each server on the hash ring.
