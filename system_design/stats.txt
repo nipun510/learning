@@ -1,0 +1,8 @@
+100Gb per Day ~ 200TB in 5yrs.
+
+Mysql storage capacity => 10TB
+Typical server memory capacity => 100GB
+
+Facebook active users:2.38 billion
+
+1 billion AU per month = 12000 request per second

@@ -1,5 +1,6 @@
-://medium.com/@Pinterest_Engineering/sharding-pinterest-how-we-scaled-our-mysql-fleet-3f341e96ca6f
+https://medium.com/@Pinterest_Engineering/sharding-pinterest-how-we-scaled-our-mysql-fleet-3f341e96ca6f
 https://medium.com/paypal-engineering/application-design-considerations-for-sharding-high-volume-databases-429b9455a6c3
+
 sharding => splitting single logical dataset into multiple databases.
 
 Do you really need sharding? 
@@ -13,7 +14,8 @@ database replicas.
 Vertical splitting vs Horizontal splitting
 
 Sharding strategies:
-key Based Sharing:
+---------------------
+****key Based Sharing****
     shard-key: should be unique and static.
   Benifits: Even distribution of keys.
   Disadvantage: Invalidation of shard-key server mapping. Could lead to
@@ -24,32 +26,31 @@ multiple shards.
   Join across tables to be done based on the same shard-key.
   Read interface must be shard key based.
 
-Range Based Sharding:
+****Range Based Sharding*******
   Simple to implement.
   Disadvantage: Could cause database hotspot due to uneven distribution of
 keys.
-Directory Based Sharding:
+
+****Directory Based Sharding:****
   Need to maintain a look-up table.
   Upside : Easy to add or remove shards dynamically.
   Downside: extra look-up required.
       look-up table singe point of failure.
-Entity-Group Based Sharding:
+
+****Entity-Group Based Sharding:****
   Store related entities/tables in a single partition. Data may to stored into
-multiple partition to ensure
-  efficient read.
+multiple partition to ensure efficient read.
   All the tables in a entity group should have the same shard key.So for a
-given transaction entity, all the tables 
-  could be joined easily.
+given transaction entity, all the tables could be joined easily.  
 
 Challenges:
   Join Across Shards:
     It would be responsibility of application to query all the shards and
-perform the join.Caching can be helpful here.
+      perform the join.Caching can be helpful here.
     On failure of a particular query, can opt for availability or consistency.
-  Write Across Shards:
+      Write Across Shards:
     Trasaction has to broken into multiple trasactions.
-    On failure of a particular transaction, requires a mechanism to retry or
-make the database consistent again.
-  Queries based on non-shard key: We can mantain a secondary Global Index Table
-which would keep a mapping between secondary-key
-    and shard-key.Application should be agnostic to this framework.
+      On failure of a particular transaction, requires a mechanism to retry or
+      make the database consistent again.
+    Queries based on non-shard key: We can mantain a secondary Global Index Table
+      which would keep a mapping between secondary-key and shard-key.Application should be agnostic to this framework.

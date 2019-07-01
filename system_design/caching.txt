@@ -1,0 +1,12 @@
+patterns:
+Client Caching:
+Caching at the Database query level:
+  Cached Data may become stable whenever database changes.
+  When a piece of data changes(for example a table cell), you will need to
+  delete all cached results containing that table cell.
+
+Caching at the Object level:
+  Used for Caching:
+    Fully Rendered Web pages
+    User sessions
+    Activity streams
