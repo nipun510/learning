@@ -21,3 +21,21 @@ https://stackoverflow.com/questions/4237817/configuring-vim-for-c
 #configure syntax correction
   cd ~/.vim/bundle && git clone --depth=1 https://github.com/vim-syntastic/syntastic.git  
 
+#To install java
+sudo add-apt-repository ppa:openjdk-r/ppa && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
+
+#To install javaBuild Tool Gradle
+wget https://services.gradle.org/distributions/gradle-5.0-bin.zip -P /tmp
+sudo unzip -d /opt/gradle /tmp/gradle-*.zip
+sudo nano /etc/profile.d/gradle.sh
+  paste following:
+  export GRADLE_HOME=/opt/gradle/gradle-5.0
+  export PATH=${GRADLE_HOME}/bin:${PATH}
+sudo chmod +x /etc/profile.d/gradle.sh
+source /etc/profile.d/gradle.sh
+gradle -v
+
+
+
+
+
