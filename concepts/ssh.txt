@@ -1,0 +1,37 @@
+https://www.digitalocean.com/community/tutorials/understanding-the-ssh-encryption-and-connection-process
+
+symmetrical encryption : shared secret key
+  eg. AES(advanced encryption standard, blowfish, 3DES
+  Diffie Hellman algorithm is used to arrive at the common key.
+asymmetrical encrytion : public and private key pair
+hashing : message integrity, algo is irreversible
+  eg. HMAC(hash based message authentication code)
+
+
+(Encrypted message + MAC) are being exchanged to provide encryption and integrity.
+
+Steps followed in ssh:
+*client opens TCP connection, agrees upon a protocol version with server
+   and authenticate the server using the the public key of the server.
+*client and server negotiate a common secret key for the session using 
+  diffi hellman algorithm. After this, every communication is wrapped with this
+  symmetric session key.
+*User authentication is done next.client sends the id of the key pair it wants 
+  to authenticate with to the server.
+*server checks the authorized_keys of the account that the key is attempting to log
+  into with the key ID.
+*Asymmetric authentication along with MD5 is used to authenticate the user.
+
+SSH Tunneling
+https://www.howtogeek.com
+
+local Port Forwarding : Make remore resoure accessible on local system
+  use to map local port to a remote end point through a ssh server.
+  ssh -L local_port:remote_address:remote_port username@server.com
+
+remote Port Forwarding: Make local resource accesible on a  remote machine
+  ssh -R remote_port:local_address:local_port username@server.com
+
+dynamic port Forwarding: Use ssh server as a proxy.
+  ssh -D local_port username@server.com
+  You could then configure an application to access the SOCKS proxy on your local PC
