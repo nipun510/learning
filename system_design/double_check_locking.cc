@@ -23,8 +23,6 @@ void setGlobalStatusImproved(){
             globalStatus = true;
         }
     }
-    std::lock_guard<std::mutex> lock(m_gs);
-    globalStatus = true; 
 }
 
 
