@@ -134,3 +134,16 @@ int main() {
     }
    
 }
+
+
+
+/*
+output:
+
+allocating mem address [0x1f3dc20] of size [8]
+allocating mem address [0x1f3dc28] of size [8]
+obj1 => [0x1f3dc20], obj2 => [0x1f3dc28]
+freeing memory addr [0x1f3dc28]
+freeing memory addr [0x1f3dc20]
+
+*/
