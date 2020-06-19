@@ -38,7 +38,7 @@ class value2 : public valueType{
 // fixed property 
 // all the properties can only be added statically and 
 // not dynamically at run time. In below example class A has two fixed
-// properties name and adress.
+// properties :- name and adress.
 class A
 {
 public:
@@ -66,8 +66,7 @@ private:
 };
 
 //defined dynamic propery
-// Only pre
-
+// Only predefined propertyNames can be used
 
 class C
 {
@@ -87,15 +86,18 @@ private:
         std::string getName() const { return _name; }
     };
     
-    static void
+public:
+    static bool
     setProperties(std::vector<std::string> validPropertyNames) {
-       for (auto & name : validPropertyNames) {
+        if (! _properties.empty()) {
+            return false;
+        }
+        for (auto & name : validPropertyNames) {
            _properties[name] = new property{name};
-       }
+        }
+        return true;
     }
     
-    
-public:
     static bool
     hasProperty(const std::string & name) {
         return _properties.find(name) != _properties.end();
@@ -146,9 +148,11 @@ int main()
     // defined dynamic propery
     // Only valid property names are allowed.
     std::vector<std::string> propertyNames{"name", "address", "age"};
-    C cobj{propertyNames}; // property names for class C fixed now.
+    A::setProperties(propertyNames); // can be set only once for a class.
+    C cobj; // obj with predefined property names created now.
     cobj.setValue("name", nameValue);
     cobj.setValue("address", addressValue);
     cobj.setValue("garbage", garbageValue); // this will fail at run time. will return false.
+    
     #ToDo property name check at compile time.
 } 
