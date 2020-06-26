@@ -25,11 +25,8 @@ private:
 	}
 
 public:
-    enum class overwritePolicy {
-        ALLOW,
-        NOT_ALLOW
-    };
-	circular_buffer(int capacity, overwritePolicy policy = overwritePolicy::ALLOW) : _start{0}, 
+
+	circular_buffer(int capacity) : _start{0}, 
 									_end{0},
 									_size{0},
 									_capacity{capacity},
