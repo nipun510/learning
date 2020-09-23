@@ -7,4 +7,7 @@ https://leetcode.com/problems/convert-a-number-to-hexadecimal/
 decimal number to hexadecimal conversion
 Right shift of negative signed number results in arithmetic right shift.
 
-
+https://leetcode.com/problems/design-add-and-search-words-data-structure/
+To design a data structur that could store words and search word and pattern containing dot.
+eg ac.d, acd, add
+can be easily solved using trie data structure.
