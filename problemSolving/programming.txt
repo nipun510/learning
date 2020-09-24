@@ -2,11 +2,11 @@
 https://leetcode.com/problems/cheapest-flights-within-k-stops/
 shorted cost for flight between src and dst with upto k stops.
 dp[k][i][j] = shortest distance/cost between i and j with upto k stoppages.
-
+****
 https://leetcode.com/problems/convert-a-number-to-hexadecimal/
 decimal number to hexadecimal conversion
 Right shift of negative signed number results in arithmetic right shift.
-
+****
 https://leetcode.com/problems/design-add-and-search-words-data-structure/
 To design a data structur that could store words and search word and pattern containing dot.
 eg ac.d, acd, add
@@ -17,13 +17,18 @@ https://leetcode.com/problems/house-robber-ii/
 robber problem with the constraint that first and last are neighbour.
 dp[i] = cost of robbing upto ith house. ith house may or maynot be robbed.
 For this problem, cosider 0 to n-2 houses and 1 to n-1 houses separately.
-
+****
 https://leetcode.com/problems/house-robber-iii/
 nothing but robber problem with tree.
-
+****
 https://leetcode.com/problems/count-servers-that-communicate/submissions/
-
+****
 https://leetcode.com/problems/replace-words
 Given a sentence and a dictionary, replace all words in sentence with their shortest prefixes in dictionary.
 The idea is store all the dictionary words in a trie, and find shorted prefix of all the words in the sentence for replacement.
+****
+https://leetcode.com/problems/jump-game-iii/
+Idea : at each index you can reach some other indexes, problem is if you can reach a particular destination index.
+Simple bfs or dfs.]
+****
 
