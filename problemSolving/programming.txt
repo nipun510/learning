@@ -25,4 +25,5 @@ https://leetcode.com/problems/count-servers-that-communicate/submissions/
 
 https://leetcode.com/problems/replace-words
 Given a sentence and a dictionary, replace all words in sentence with their shortest prefixes in dictionary.
-The idea is store all the words in trie, and find shorted prefix of all the words in the sentence.
+The idea is store all the dictionary words in a trie, and find shorted prefix of all the words in the sentence for replacement.
+
