@@ -1,1 +1,45 @@
+24 Sept 2020
+https://www.youtube.com/watch?v=TFMKjL38xAI
+cppcon The Hidden Secrets of Move semantics
+option-1
+object val = fun(); // copy
+cont.save(val); // copy because arg is lval
+option-2
+cont.save(fun()) // no copy as arg is rval
+There option-2 should be preferred.
+
+
+return value in interface design
+int &contVal();  //option 1
+int & a = cont1.contVal();
+cont2.save(std::move(a)); // modifies the value stored in cont1.
+const int &contVal() // option 2
+better to use option 2 over option 1
+
+unnecessarily don't do this
+const std::string getStr(); //option 1
+cont1.save(getStr()); // copy as rval is const
+std::string getStr(); // option 2
+Better to use option 2 as it allows move.
+
+std::move is necessary for:
+* Parameters
+* arguments
+* Return values used multiple times
+* Readable code
+
+template<typename T>
+class P{
+void fun(T&& val) {
+  store(std::forward<T>(val); // option-1 this is not universal or forwarding reference.
+template<typename U>
+void funx(U && val) {
+  store(std::forward<U>(val); // option-2 this is universal or forwarding reference
+}
+};
+
+P<int> p;
+int a = 2;
+p.fun(a);// will result in error as option-1 is not universal/forwarding reference.
+For forwarding reference template argument has to be functional argument.
 
