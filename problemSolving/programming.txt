@@ -20,3 +20,9 @@ For this problem, cosider 0 to n-2 houses and 1 to n-1 houses separately.
 
 https://leetcode.com/problems/house-robber-iii/
 nothing but robber problem with tree.
+
+https://leetcode.com/problems/count-servers-that-communicate/submissions/
+
+https://leetcode.com/problems/replace-words
+Given a sentence and a dictionary, replace all words in sentence with their shortest prefixes in dictionary.
+The idea is store all the words in trie, and find shorted prefix of all the words in the sentence.
