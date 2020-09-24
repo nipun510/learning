@@ -1,4 +1,4 @@
-
+23 Sept 2020
 https://leetcode.com/problems/cheapest-flights-within-k-stops/
 shorted cost for flight between src and dst with upto k stops.
 dp[k][i][j] = shortest distance/cost between i and j with upto k stoppages.
@@ -11,3 +11,12 @@ https://leetcode.com/problems/design-add-and-search-words-data-structure/
 To design a data structur that could store words and search word and pattern containing dot.
 eg ac.d, acd, add
 can be easily solved using trie data structure.
+
+24 Sept 2020
+https://leetcode.com/problems/house-robber-ii/
+robber problem with the constraint that first and last are neighbour.
+dp[i] = cost of robbing upto ith house. ith house may or maynot be robbed.
+For this problem, cosider 0 to n-2 houses and 1 to n-1 houses separately.
+
+https://leetcode.com/problems/house-robber-iii/
+nothing but robber problem with tree.
