@@ -1,3 +1,10 @@
 24 Sept 2020
 problemSolving : leetcode problems
 cpp : The Hiden secrets of Move Semantics. cppcon video
+
+25 Sept 2020
+problemSolving : leetcode
+projects : rapidjson
+reading : The vanishing half
+video : partial of cppcon video The Beauty and power of primitive c++
+coursera : 3 lessons in course Revolutionay ideas Utility, Justice, Equality and Freedom 
