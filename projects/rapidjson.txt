@@ -6,3 +6,7 @@ documentation : http://rapidjson.org/
 document.h:257
 A json value can of 7 types. GenericValue is a variant type supporting these types. 
 GenericValue contains a union with all the types as it member. A bit flag is there to denote type currently stored. 
+
+GenericValue and GenericDocument are generic in sense that they can support any encoding. Value and Document UTF8 encoding.
+GenericDocument uses reader to parse json stream.
+GenericDocument inherits from GenericValue. why ?
