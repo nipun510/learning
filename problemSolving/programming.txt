@@ -21,7 +21,7 @@ For this problem, cosider 0 to n-2 houses and 1 to n-1 houses separately.
 https://leetcode.com/problems/house-robber-iii/
 nothing but robber problem with tree.
 ****
-https://leetcode.com/problems/count-servers-that-communicate/submissions/
+https://leetcode.com/problems/count-servers-that-communicate
 ****
 https://leetcode.com/problems/replace-words
 Given a sentence and a dictionary, replace all words in sentence with their shortest prefixes in dictionary.
@@ -31,4 +31,8 @@ https://leetcode.com/problems/jump-game-iii/
 Idea : at each index you can reach some other indexes, problem is if you can reach a particular destination index.
 Simple bfs or dfs.]
 ****
+
+25 Sept 2020
+https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/
+
 
