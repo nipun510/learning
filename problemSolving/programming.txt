@@ -38,4 +38,7 @@ https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-cl
 28 Sept 2020
 https://leetcode.com/problems/can-convert-string-in-k-moves
 
-
+12 Oct 2020
+Decode String: https://leetcode.com/problems/decode-string/
+Queue Reconstruction by Height: https://leetcode.com/problems/queue-reconstruction-by-height/
+Partition Equal Subset Sum: https://leetcode.com/problems/partition-equal-subset-sum/
