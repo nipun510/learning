@@ -1,1 +1,11 @@
+-https://github.com/nlohmann/json.git
+-code well documented
 
+basic_jason:
+  friends:
+    -jason_pointer
+    -serializer
+    -parser
+    -binary_writer
+    -binary_reader
+    
