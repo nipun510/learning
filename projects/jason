@@ -9,3 +9,46 @@ basic_jason:
     -binary_writer
     -binary_reader
     
+  data:
+    -basic_json_t
+    -json_value
+    
+  behaviours:
+    -element access
+      -reference at(key)
+      -reference operator[](key)
+    -iterator erase(Itertor first, Iterator last): 4146 
+    -size_t erase(key)
+    -void erase(index)
+    -lookup:
+      -iterator find(key)
+      -size_t count(key)
+      -bool contains(key)
+      
+    
+Need to explore:
+  -details::output_adapter<T>
+    
+@concept:
+  -At times user need to perform certain operations/algorithm that may use or return original class type. The operation doen't involve any state.
+  -For example: For base_json such operations are serialize, binary_write, binary_read
+  Approach 1:
+    -we can make the algorithm class a member of the class and such opertions can be performed on the class through delegation.]
+    -used when a number of algorithms/strategy have a common interface.
+    -benifits:
+      -user can use different algorithm/strategy throgh strategy.
+      -don't have to instatiate class object, just have to hold reference, or weak pointer.
+    -disadvantage:
+      -make interface complex.
+      
+ Approach 2:
+    -can define a static functions and use the strategy object in it.
+    -used when we have a single algorithm and class users don't care about it.
+    -disadvantage:
+      -hardcoding of the strategy, can't be changed at run time.
+      -have to make strategy class a friend of the data class to acess state.
+      
+ In both the above approaches, changes are there in the original class. However, if we want to extend a new functionality/operation/behaviour 
+ but we can't the original class, we go for visitor pattern.
+ 
+ 
