@@ -14,5 +14,11 @@
   design : 
     -real world Haskell: Types and functions.
     -functional programming in 40 min lec.
+    
+22 Oct 2020:
+  design:
+    -design patterns for FP: 
+      -Does functional programming replace GoF design patterns? [SO]
+      -https://www.youtube.com/watch?v=E8I19uA-wGY
          
          
